@@ -1,6 +1,6 @@
 {
   "name": "create-nice-lib",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "index.js",
   "bin": {
     "create-nice-lib": "index.js"
@@ -10,8 +10,5 @@
     "inquirer": "^7.3.3",
     "mem-fs": "^1.2.0",
     "mem-fs-editor": "^7.1.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   }
 }

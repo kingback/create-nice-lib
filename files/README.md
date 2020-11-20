@@ -1,9 +1,9 @@
 # <%= name %>
 
 ![](https://img.shields.io/travis/<%= group %>/<%= name %>.svg)
-![](https://coveralls.io/github/<%= group %>/<%= name %>?branch=main)
-![](https://img.shields.io/npm/dw/<%= name %>)
-![](https://img.shields.io/npm/l/<%= name %>)
+![](https://coveralls.io/repos/github/<%= group %>/<%= name %>/badge.svg?branch=main)
+![](https://img.shields.io/npm/dw/<%= name %>.svg?sanitize=true)
+![](https://img.shields.io/npm/l/<%= name %>.svg?sanitize=true)
 ![](https://img.shields.io/badge/by-<%= group %>-green)
 
 <%= description %>
@@ -21,6 +21,11 @@ export CONVENTIONAL_GITHUB_RELEASER_TOKEN="your_token"
 ```
 
 **Never ever expose your token in your repo**
+
+### bind travis & coveralls
+
+* [travis-cli](https://travis-ci.com/)
+* [coveralls](https://coveralls.io/)
 
 ### commands
 

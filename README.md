@@ -25,6 +25,11 @@ export CONVENTIONAL_GITHUB_RELEASER_TOKEN="your_token"
 
 **Never ever expose your token in your repo**
 
+### bind travis & coveralls
+
+* [travis-cli](https://travis-ci.com/)
+* [coveralls](https://coveralls.io/)
+
 ### commands
 
 ```bash

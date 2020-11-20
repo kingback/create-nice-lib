@@ -27,10 +27,11 @@ function execGitSync(command, trim = true) {
 }
 
 function ask() {
+  const name = repo || path.basename(pwd);
   return inquirer.prompt([
     {
       name: 'name',
-      default: repo || path.basename(pwd),
+      default: name,
       validate(input) {
         return input.trim() ? true : 'Please input name'
       }
@@ -42,12 +43,17 @@ function ask() {
       }
     }, {
       name: 'description',
+      default(answers) {
+        return answers.name;
+      },
       validate(input) {
         return input.trim() ? true : 'Please input description'
       }
     }, {
       name: 'keys',
-      message: 'keys(like a,b,c):',
+      default(answers) {
+        return answers.name.split(/-|_/).join(',')
+      },
       validate(input) {
         return input.trim() ? true : 'Please input keys'
       }
@@ -81,7 +87,8 @@ function copy(answers) {
 }
 
 ask().then(copy).then(() => {
-  if (!isGitRepo) execGitSync('git init', { stdio: 'inherit' });
+  if (!isGitRepo) execSync('git init', { stdio: 'inherit' });
+  execSync('npm i', { stdio: 'inherit' });
   console.log('Success!');
 }).catch((err) => {
   console.error(err);

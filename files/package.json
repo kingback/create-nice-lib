@@ -38,7 +38,7 @@
     "type": "git",
     "url": "git+https://github.com/<%= group %>/<%= name %>.git"
   },
-  "keywords": <%= keys %>,
+  "keywords": <%- keys %>,
   "author": "<%= author %>",
   "license": "MIT",
   "bugs": {
