@@ -1,17 +1,14 @@
-# create-nice-lib
+# <%= name %>
 
-Create a nice open source library.
+![](https://img.shields.io/travis/<%= group %>/<%= name %>.svg)
+![](https://coveralls.io/github/<%= group %>/<%= name %>?branch=main)
+![](https://img.shields.io/npm/dw/<%= name %>)
+![](https://img.shields.io/npm/l/<%= name %>)
+![](https://img.shields.io/badge/by-<%= group %>-green)
+
+<%= description %>
 
 ## usage
-
-### create repo
-
-[Create a new repo on github](https://github.com/new) and clone it to local, then init your scaffold.
-
-```bash
-$ cd your_repo
-$ npx create-nice-lib
-```
 
 ### generate github release token
 

@@ -1,0 +1,77 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "commit": "git add . -A && cz",
+    "push": "npm run commit && git push",
+    "test": "jest --coverage",
+    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
+    "build": "npm run build:dist & npm run build:esm & npm run build:lib",
+    "build:dist": "del dist && PRESET_ENV_MODULES=esm rollup --config",
+    "build:lib": "del lib &&  babel src --out-dir lib",
+    "build:esm": "del esm && PRESET_ENV_MODULES=esm babel src --out-dir esm",
+    "eslint": "eslint src/** --fix",
+    "prepublishOnly": "npm run build",
+    "sv": "standard-version",
+    "sv:beta": "standard-version --prerelease beta --skip.changelog --skip.tag",
+    "push:tag": "git push --follow-tags origin main",
+    "pub:beta": "npm publish --tag beta",
+    "pub": "npm publish",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:beta": "npm run sv:beta && git push && npm run pub:beta",
+    "release": "npm run sv && npm run push:tag && npm run pub && npm run release:github"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= group %>/<%= name %>.git"
+  },
+  "keywords": <%= keys %>,
+  "author": "<%= author %>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= group %>/<%= name %>/issues"
+  },
+  "homepage": "https://github.com/<%= group %>/<%= name %>#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "commitizen": "^4.2.2",
+    "conventional-github-releaser": "^3.1.5",
+    "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "rollup": "^2.33.3",
+    "standard-version": "^9.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
