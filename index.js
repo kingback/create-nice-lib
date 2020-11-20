@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const pwd = process.cwd();
 const fs = require('fs');
 const path = require('path');
