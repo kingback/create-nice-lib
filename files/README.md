@@ -1,10 +1,10 @@
 # <%= name %>
 
-![](https://img.shields.io/travis/<%= group %>/<%= name %>.svg)
-![](https://coveralls.io/repos/github/<%= group %>/<%= name %>/badge.svg?branch=main)
-![](https://img.shields.io/npm/dw/<%= name %>.svg?sanitize=true)
-![](https://img.shields.io/npm/l/<%= name %>.svg?sanitize=true)
-![](https://img.shields.io/badge/by-<%= group %>-green)
+[![Travis Status](https://img.shields.io/travis/<%= group %>/<%= name %>.svg)](https://travis-ci.com/github/<%= group %>/<%= name %>)
+[![Coverage Status](https://coveralls.io/repos/github/<%= group %>/<%= name %>/badge.svg?branch=main)](https://coveralls.io/github/<%= group %>/<%= name %>?branch=main)
+[![Download Weekly](https://img.shields.io/npm/dw/<%= name %>.svg?sanitize=true)](https://npmcharts.com/compare/<%= name %>?minimal=true)
+[![License](https://img.shields.io/npm/l/<%= name %>.svg?sanitize=true)](https://github.com/<%= group %>/<%= name %>)
+[![Create by](https://img.shields.io/badge/by-<%= group %>-green)](https://github.com/<%= group %>)
 
 <%= description %>
 

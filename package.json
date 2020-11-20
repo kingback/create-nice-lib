@@ -1,6 +1,6 @@
 {
   "name": "create-nice-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": {
     "create-nice-lib": "index.js"
